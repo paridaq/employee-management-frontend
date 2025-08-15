@@ -7,6 +7,7 @@
                 <a href="/employees" style={{ color: '#fff', marginRight: '24px', textDecoration: 'none', fontWeight: 'bold' }}>Employees</a>
                 <a href="/post-employee" style={{ color: '#fff', textDecoration: 'none', fontWeight: 'bold' }}>Post Employee</a>
             </nav>
+            <p>it is working</p>
         </div>
         </>
      )
