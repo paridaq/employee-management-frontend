@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
   
 
@@ -8,6 +9,7 @@ import { useState } from "react";
     const[email,setEmail] = useState("");
     const [phone,setPhone]= useState("");
     const[department,setDepartment] = useState("");
+    const navigate = useNavigate();
 
   const handleSubmit=async(e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault();
@@ -19,7 +21,7 @@ import { useState } from "react";
         headers:{
             'Content-Type':'applocation/json'
         },
-        body:JSON.stringify(data);
+        body:JSON.stringify(data)
     
     })
     if(!res.ok){
@@ -28,10 +30,11 @@ import { useState } from "react";
        
     const result = await res.json();
     console.log(result);
+    navigate("/dashboard")
 
      
     } catch (error) {
-        
+        console.log(error)
     }
     
 
