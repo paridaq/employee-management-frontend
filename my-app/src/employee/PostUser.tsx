@@ -16,10 +16,10 @@ import { useNavigate } from "react-router";
     const data ={name,email,phone,department}
     try {
 
-        const res = await fetch('http://localhost:8080/api/employee',{
+        const res = await fetch("http://localhost:8080/api/employee",{
         method:'POST',
         headers:{
-            'Content-Type':'applocation/json'
+            'Content-Type':'application/json'
         },
         body:JSON.stringify(data)
     
