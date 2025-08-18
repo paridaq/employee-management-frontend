@@ -9,9 +9,31 @@ import { useState } from "react";
     const [phone,setPhone]= useState("");
     const[department,setDepartment] = useState("");
 
-  const handleSubmit=(e:React.FormEvent<HTMLFormElement>)=>{
+  const handleSubmit=async(e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault();
     const data ={name,email,phone,department}
+    try {
+
+        const res = await fetch('http://localhost:8080/api/employee',{
+        method:'POST',
+        headers:{
+            'Content-Type':'applocation/json'
+        },
+        body:JSON.stringify(data);
+    
+    })
+    if(!res.ok){
+        throw new Error()
+    }
+       
+    const result = await res.json();
+    console.log(result);
+
+     
+    } catch (error) {
+        
+    }
+    
 
   }
 
