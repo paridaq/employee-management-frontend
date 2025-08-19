@@ -36,6 +36,18 @@ useEffect(()=>{
      fetchemployees()
 },[])
 
+
+const handleDelete =async(id:number)=>{
+     try {
+          const res = await fetch(`http://localhost:8080/employee/delete/${id}`,{
+           method:"DELETE",
+             console.log("empoyee with the id is deleted succesfully")  
+          })
+     } catch (error) {
+          
+     }
+}
+
      return(
 
     <>
