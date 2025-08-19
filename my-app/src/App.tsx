@@ -5,6 +5,7 @@ import Home from './Home'
 import NoMatch from './nomatch/NoMatch'
 import Dashboard from './dashboard/Dashboard'
 import PostUser from './employee/PostUser'
+import UpdateUser from './employee/UpdateUser'
 
 function App() {
   
@@ -16,6 +17,7 @@ function App() {
         <Route path = "*" element = {<NoMatch/>}/>
         <Route path = "/dashboard" element= {<Dashboard/>}/>
         <Route path="employee" element= {<PostUser/>}/>
+        <Route path='employee/:id' element={<UpdateUser/>}/>
       </Routes>
     </>
   )

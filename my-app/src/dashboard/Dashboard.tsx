@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 
 
@@ -16,6 +17,7 @@ type Employee = {
 
 function Dashboard(){
      const[employees,setEmployees] = useState<Employee[]>([]);
+     const navigate = useNavigate();
 
 
 useEffect(()=>{
@@ -53,6 +55,9 @@ const handleDelete =async(id:number)=>{
         console.log(error)  
      }
 }
+const updateUser=(id:number)=>{
+    navigate(`/employee/${id}`)
+}
 
      return(
 
@@ -64,7 +69,7 @@ const handleDelete =async(id:number)=>{
                <li>{employee.email}</li>
                <li>{employee.phone}</li>
                <li>{employee.department}</li>
-               <button>update</button>
+               <button onClick={()=>updateUser(employee.id)}>update</button>
                <button onClick={()=>handleDelete(employee.id)}>delete</button>
           </ul>
      ))}

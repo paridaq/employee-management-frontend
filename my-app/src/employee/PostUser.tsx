@@ -43,35 +43,36 @@ import { useNavigate } from "react-router";
 
     return (
         <>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="name">Name</label>
-              <input type="text" required
-              placeholder="name"
-              value={name || ""}
-              onChange={e => setName(e.target.value)}/>
-            <label htmlFor="email">Email</label>
-            <input type="text"
-            required
-            placeholder="email"
-            value={email || ''}
-            onChange={e=>setEmail(e.target.value)} />
-        
-            <label htmlFor="text">phone</label>
-            <input type="text"
-            required
-            placeholder="phone"
-            value={phone || ''}
-            onChange={e=>setPhone(e.target.value)} />
-        
-            <label htmlFor="text">department</label>
-            <input type="text"
-            required
-            placeholder="department"
-            value={department || ''}
-            onChange={e=>setDepartment(e.target.value)} />
-            <button type="submit">submit </button>
-        
-        </form>
+          <form onSubmit={handleSubmit}>
+
+          <label htmlFor="">name</label>
+          <input type="text" 
+          value={name}
+          required
+          placeholder="enter the name"
+          onChange={e=>setName(e.target.value)}/>
+          <label htmlFor="">email</label>
+          <input type="text"
+          value={email}
+          required
+          placeholder="enter the email"
+          onChange={e=>setEmail(e.target.value)} />
+          <label htmlFor="">phone</label>
+          <input type="text" 
+          required
+          placeholder="enter the phone number"
+          value={phone}
+          onChange={e=>setPhone(e.target.value)}/>
+          <label htmlFor="">department</label>
+          <input type="text"
+          required
+          placeholder="department"
+          value={department}
+          onChange={e=>setDepartment(e.target.value)} />
+          
+          <button type="submit">post user</button>
+          </form>
+  
         </>
     )
   }
