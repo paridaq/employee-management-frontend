@@ -39,12 +39,18 @@ useEffect(()=>{
 
 const handleDelete =async(id:number)=>{
      try {
-          const res = await fetch(`http://localhost:8080/employee/delete/${id}`,{
+          const res = await fetch(`http://localhost:8080/api/employee/${id}`,{
            method:"DELETE",
-             console.log("empoyee with the id is deleted succesfully")  
+             
           })
+          if(res.ok){
+               setEmployees((prevEmployees)=>
+               prevEmployees.filter((employee)=>employee.id!=id))
+               //so the content inside the filter means filter the content which is not equl to the given id like filter all expect this
+          }
+          console.log("empoyee with the id is deleted succesfully")  
      } catch (error) {
-          
+        console.log(error)  
      }
 }
 
@@ -59,7 +65,7 @@ const handleDelete =async(id:number)=>{
                <li>{employee.phone}</li>
                <li>{employee.department}</li>
                <button>update</button>
-               <button>delete</button>
+               <button onClick={()=>handleDelete(employee.id)}>delete</button>
           </ul>
      ))}
     </div>
